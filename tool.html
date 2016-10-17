@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="HongShaoRou"/>
+    <title>公用组件</title>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body, html {
+            font-size: 62.5%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: #fff;
+            font-family: STHeitiSC-Light, Helvetica-Light, arial, sans-serif, 'Droid Sans Fallback';
+        }
+
+        input {
+            -webkit-user-select: auto;
+            -webkit-appearance: none;
+            appearance: none;
+            outline: 0;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #999;
+        }
+
+        li, ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4c4c4c;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        .bold {
+            font-weight: bold !important;
+        }
+
+        .fixed {
+            position: fixed !important;
+        }
+
+        .bdn {
+            border: none !important;
+        }
+
+        .cb {
+            clear: both !important;
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        button {
+            display: block;
+            width: 80%;
+            margin: 1rem auto;
+            background: #ef4454;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            padding: .6rem 0
+        }
+
+        a.js_to_h {
+            display: block;
+            width: 80%;
+            margin: 1rem auto;
+            background: #fff;
+            color: #ef4454;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            padding: .6rem 0;
+            border: 1px solid #ef4454;
+            font-size: 1.4rem
+        }
+
+        label {
+            font-size: 1.6rem;
+        }
+
+        .time-frame {
+            margin: 1rem 0;
+            text-align: center
+        }
+
+        .time-frame input {
+            width: 50%;
+            border: 1px solid #d0d0d0;
+            padding: 0.3rem 0;
+            font-size: 1.6rem;
+        }
+
+        .time-frame label {
+            margin-right: 1rem;
+        }
+
+        img {
+            width: 100%
+        }
+
+        .js_img_frame {
+            width: 100%;
+            height: 10rem;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style/mobile_tool.css">
+    <link rel="stylesheet" type="text/css" href="style/mobile_time.css"/>
+</head>
+<body>
+<div class="time-frame">
+    <label>活动时间</label><input type="text" placeholder="点击添加时间" id="time"/>
+</div>
+<div class="mocm_frame">
+    <a href="javascript:;" class="mocm_btn_full" id="showToast1">点击已完成</a>
+</div>
+<div class="mocm_frame">
+    <a href="javascript:;" class="mocm_btn_prime" id="showToast2">点击加载中</a>
+</div>
+<div class="mocm_frame">
+    <a href="javascript:;" class="mocm_btn_prime" id="showToast3">点击提示</a>
+</div>
+
+<div class="mocm_frame">
+    <div class="mocm_cells_title">原图</div>
+    <div><img src="images/mg_g4.jpg" alt=""></div>
+</div>
+
+<div class="mocm_frame">
+    <div class="mocm_cells_title mocm_prime_bgcolor">调整后图</div>
+    <div><img class="js_img_ad" src="images/mg_g4.jpg" alt=""></div>
+</div>
+<button id="popup">点击弹出框</button>
+<button id="edgeTop">边缘弹出框上</button>
+<button id="edgeBottom">边缘弹出框下</button>
+<div class="mocm_frame">
+    <div class="mocm_cells_title mocm_prime_bgcolor">BOX功能测试</div>
+    <div class="mocm_cells">
+        <div class="mocm_cell" id="emailTest">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>123456@qq.com</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="emailTest2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>12345689</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="phoneTest">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>15236251489</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="phoneTest2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>12345678910</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="ipText">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>192.168.1.254</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="ipText2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>1256.1</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="telText">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>010-87654321</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="telText2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>8653258</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="urlText">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>http://www.cc.com</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="urlText2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>ccc.cn</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="chineseText">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>哈哈</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="chineseText2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>ccc</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isNickname">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>ccc</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isNickname2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>ccc??</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isAccount">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>ccc456</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isAccount2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>ccc??</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isJSON">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>"@qwwe"</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isJSON2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>boa()</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="iscard">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>330702194706165014</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="iscard2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>123565858565354158</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="Stringlength">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>ssssss</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isCHS">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>男女</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="isCHS2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>sss</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+        <div class="mocm_cell" id="subCHString">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>sssss</p>
+            </div>
+            <div class="mocm_cell_ft">
+            </div>
+        </div>
+        <div class="mocm_cell" id="overFlowText">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>sss一</p>
+            </div>
+            <div class="mocm_cell_ft">
+            </div>
+        </div>
+        <div class="mocm_cell" id="overFlowText2">
+            <div class="mocm_cell_bd mocm_cell_primary">
+                <p>sssss</p>
+            </div>
+            <div class="mocm_cell_ft">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 由于在tool.js中对于移动端引入fastClick使用JSONP 所以需要放在底部 -->
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/tool.js"></script>
+<script src="js/tool_time.js"></script>
+<script type="text/template" id="example">
+    <a class="js_to_h" href="#{{link}}">
+        {{name}}
+    </a>
+</script>
+<script>
+    $(document).ready(function () {
+        /*emali*/
+        var emailTest = toolKit.box.isEmail($("#emailTest").find("p").text());
+        $("#emailTest").find(".mocm_cell_ft").html(emailTest + "&nbsp" + "&nbsp" + "(email)");
+        var emailTest2 = toolKit.box.isEmail($("#emailTest2").find("p").text());
+        $("#emailTest2").find(".mocm_cell_ft").html(emailTest2 + "");
+        /*phone*/
+        var phoneText = toolKit.box.isMobile($("#phoneTest").find("p").text());
+        $("#phoneTest").find(".mocm_cell_ft").html(phoneText + "&nbsp" + "&nbsp" + "(phone)");
+        var phoneText2 = toolKit.box.isMobile($("#phoneTest2").find("p").text());
+        $("#phoneTest2").find(".mocm_cell_ft").html(phoneText2 + "");
+        /*ipv4地址*/
+        var ipText = toolKit.box.isIp($("#ipText").find("p").text());
+        $("#ipText").find(".mocm_cell_ft").html(ipText + "&nbsp" + "&nbsp" + "(ip)");
+        var ipText2 = toolKit.box.isIp($("#ipText2").find("p").text());
+        $("#ipText2").find(".mocm_cell_ft").html(ipText2 + "");
+        /*tel*/
+        var telText = toolKit.box.isTel($("#telText").find("p").text());
+        $("#telText").find(".mocm_cell_ft").html(telText + "&nbsp" + "&nbsp" + "(tel)");
+        var telText2 = toolKit.box.isTel($("#telText2").find("p").text());
+        $("#telText2").find(".mocm_cell_ft").html(telText2 + "");
+        /*Url*/
+        var urlText = toolKit.box.isUrl($("#urlText").find("p").text());
+        $("#urlText").find(".mocm_cell_ft").html(urlText + "&nbsp" + "&nbsp" + "(url)");
+        var urlText2 = toolKit.box.isUrl($("#urlText2").find("p").text());
+        $("#urlText2").find(".mocm_cell_ft").html(urlText2 + "");
+        /*中文*/
+        var chineseText = toolKit.box.isChinese($("#chineseText").find("p").text());
+        $("#chineseText").find(".mocm_cell_ft").html(chineseText + "&nbsp" + "&nbsp" + "(中文)");
+        var chineseText2 = toolKit.box.isChinese($("#chineseText2").find("p").text());
+        $("#chineseText2").find(".mocm_cell_ft").html(chineseText2 + "");
+        /*判断只是 字母 数字 下划线*/
+        var isNickname = toolKit.box.isNickname($("#isNickname").find("p").text());
+        $("#isNickname").find(".mocm_cell_ft").html(isNickname + "&nbsp" + "&nbsp" + "(文字下划线)");
+        var isNickname2 = toolKit.box.isNickname($("#isNickname2").find("p").text());
+        $("#isNickname2").find(".mocm_cell_ft").html(isNickname2 + "");
+        /*判断只是 字母 数字 下划线*/
+        var isAccount = toolKit.box.isAccount($("#isNickname").find("p").text());
+        $("#isAccount").find(".mocm_cell_ft").html(isAccount + "&nbsp" + "&nbsp" + "(文字下划线)");
+        var isAccount2 = toolKit.box.isAccount($("#isAccount2").find("p").text());
+        $("#isAccount2").find(".mocm_cell_ft").html(isAccount2 + "");
+        /*Json*/
+        var isJSON = toolKit.box.isJSON($("#isJSON").find("p").text());
+        $("#isJSON").find(".mocm_cell_ft").html(isJSON + "&nbsp" + "&nbsp" + "(Json)");
+        var isJSON2 = toolKit.box.isJSON($("#isJSON2").find("p").text());
+        $("#isJSON2").find(".mocm_cell_ft").html(isJSON2 + "");
+        /*检查身份证号，0为合法，0为合法，0为合法，重要的事情说三遍*/
+        /*返回值：0 1 2 3 4 0为合法，0为合法，0为合法，重要的事情说三遍*/
+        var iscard = toolKit.box.checkIDCard($("#iscard").find("p").text());
+        $("#iscard").find(".mocm_cell_ft").html(iscard + "&nbsp" + "&nbsp" + "(身份证)");
+        var iscard2 = toolKit.box.checkIDCard($("#iscard2").find("p").text());
+        $("#iscard2").find(".mocm_cell_ft").html(iscard2 + "");
+        /*获取页面上的url*/
+        var urla = "http://www.xunbao178.com?ask=100";
+        var urlb = "ask";
+        var getQueryText = toolKit.box.getQuery(urlb, urla);
+        /*$("#getQueryText").find(".mocm_cell_ft").html(getQueryText +"&nbsp"+"&nbsp"+"(获取页面上的url)");*/
+        console.log(getQueryText)
+        /*去掉除字符串中的HTML标签*/
+        var strremove = '<span>111</span>';
+        var removeHTMLTagText = toolKit.box.removeHTMLTag(strremove);
+        /* $("#removeHTMLTagText").find(".mocm_cell_ft").html(removeHTMLTagText +"&nbsp"+"&nbsp"+"(去掉除字符串中的HTML标签)");*/
+        console.log(removeHTMLTagText)
+        /*json对象转换为字符串*/
+        var Jsonobj = {"time": 14, "age": 18};
+        var Jsonobjs = $("#addid13").text();  //undefined类型时
+        var objToStrText = toolKit.box.objToStr(Jsonobj);
+        /* $("#objToStrText").find(".mocm_cell_ft").html(objToStrText +"&nbsp"+"&nbsp"+"(json对象转换为字符串)"); */
+        console.log(objToStrText);
+        /*计算字符串长度，汉字是长度算1，英文算0.5个字符*/
+        var Stringlength = $("#Stringlength").find("p").text();
+        $("#Stringlength").find(".mocm_cell_ft").html(Stringlength.strLen() + "&nbsp" + "&nbsp" + "计算字符串长度");
+//var asp = "男女";
+//console.log(asp.strLen());
+        /*判断某个字符是否是汉字*/
+        var isCHS = $("#isCHS").find("p").text();
+        $("#isCHS").find(".mocm_cell_ft").html(isCHS.isCHS() + "&nbsp" + "&nbsp" + "判断字符是否是汉字");
+        var isCHS2 = $("#isCHS2").find("p").text();
+        $("#isCHS2").find(".mocm_cell_ft").html(isCHS2.isCHS() + "&nbsp" + "&nbsp" + "判断字符是否是汉字");
+        /*将字符串拆成字符，并存到数组中*/
+        var strToChars = "的撒大声地";
+        console.log(strToChars.strToChars());
+        /*截取字符串*/
+        var subCHString = $("#subCHString").find("p").text();
+//console.log(subCHString.subCHStr(1,3)+"&nbsp"+"&nbsp"+"截取字符串");
+        $("#subCHString").find(".mocm_cell_ft").html(subCHString.subCHStr(1, 3) + "&nbsp" + "&nbsp" + "截取字符串");
+        /*截取字符串*/
+        var overFlowText = $("#overFlowText").find("p").text();
+        $("#overFlowText").find(".mocm_cell_ft").html(overFlowText.overFlowText(2) + "&nbsp" + "&nbsp" + "截取字符串");
+//console.log(overFlowText.overFlowText(-2))
+        var overFlowText2 = $("#overFlowText2").find("p").text();
+        $("#overFlowText2").find(".mocm_cell_ft").html(overFlowText2.overFlowText(-1) + "&nbsp" + "&nbsp" + "截取字符串");
+        $('#showToast1').on('click', function () {
+
+            toolKit.toastOK();
+        });
+        $('#showToast3').on('click', function () {
+
+            toolKit.toast("这才是提示");
+        });
+        $('#showToast2').on('click', function () {
+
+            var ing = toolKit.toasting("hahah");
+            setTimeout(function () {
+                $("#" + ing).remove();
+            }, 3000)
+        });
+        /* 弹框示例 */
+        $('#popup').on('click', function () {
+            //  btn与callback一一对应 switch为回调开关
+            var setting = {
+                "closeIcon": true,
+                "callback": [],
+                "autoClose": true
+            }
+            toolKit.pop(setting);
+        });
+        /* 上弹框实例 */
+        $('#edgeTop').on('click', function () {
+            //  btn与callback一一对应 switch为回调开关
+            var setting = {
+                "htmlCode": "<h1>哈哈哈哈哈</h1>",
+                "callback": [function () {
+                    alert("success!")
+                }, function () {
+
+                    alert("failure!")
+                }],
+                "popPosition": "top"
+            };
+            toolKit.edge(setting);
+        });
+        /* 下弹框实例 */
+        $('#edgeBottom').on('click', function () {
+            //  btn与callback一一对应 switch为回调开关
+            var setting = {
+                "title": "写个标题",
+                "htmlCode": "<h1>哈哈哈哈哈</h1>",
+                "btn": ["下载", "取消"],
+                "callback": [function () {
+                    alert("success!")
+                }],
+                "closeIcon": true,
+                "popPosition": "bottom",
+                "isAnimate": true
+            };
+            toolKit.edge(setting);
+        });
+        console.log(toolKit.box.objToStr([{key: 1, v: 2}]));
+        /* template示例 */
+        var temp = toolKit.template($("#example").text(), {link: "aaa", name: "模板示例"});
+        $("body").append(temp);
+        $(document).on("tap", "a.js_to_h", function (e) {
+            toolKit.pop({message: $(this).text()});
+            e.preventDefault();
+            return false;
+        });
+        /*$(document).on("click","a",function(e){
+         console.log("a click");
+         e.preventDefault();
+         return false;
+         });*/
+        $(document).on("swipeLeft", "a.js_to_h", function () {
+            var popid = toolKit.pop({message: "向左走~~"});
+            console.log(popid);
+            return false;
+        });
+
+        /* array map 示例 */
+        var users = [
+            {name: "张含韵", "email": "zhang@email.com"},
+            {name: "江一燕", "email": "jiang@email.com"},
+            {name: "李小璐", "email": "li@email.com"}
+        ];
+
+        var emails = users.map(function (user) {
+            return user.email;
+        });
+
+        console.log(emails.join(", "));
+
+        /* 节流示例 */
+        window.onresize = toolKit.throttle(function () {
+            console.log("节流触发")
+        }, 1000);
+        var winw = $(window).width();
+//console.log(winw);
+        $(".js_img_ad").each(function (index, el) {
+            toolKit.adjustImage(el, winw, 100);
+        });
+
+        /* 时间插件实例 */
+        (function ($) {
+            var date = new Date();
+            var currYear = date.getFullYear();
+            var opt = {};
+            var $time = $("#time");
+
+            opt.datetime = {preset: 'date'};
+            opt._default = {
+                theme: 'android-ics light', //皮肤样式
+                display: 'modal', //显示方式
+                mode: 'scroller', //日期选择模式
+                dateFormat: 'yyyy年mm月dd日',
+                lang: 'zh',
+                minDate: date,//最小日期
+                startYear: currYear - 1, //开始年份
+                endYear: currYear //结束年份
+            };
+            var optDateTime = $.extend(opt['datetime'], opt['_default']);//将自定义的属性放进去
+            $time.mobiscroll(optDateTime).datetime(optDateTime);
+        })(jQuery)
+    })
+
+</script>
+</body>
+</html>
